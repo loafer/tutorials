@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="phonecatApp">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="../js/bootstrap-3.0.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/app.css">
+    </head>
+    <body>
+        <div ng-view></div>
+        <script src="../js/angular-1.3.0-beta.8.min.js"></script>
+        <script src="../js/angular-route.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/filters.js"></script>
+        <!-- 以下脚本为直接写入页面中的，注意phonecatApp模块的写法与单独的js文件不同 -->
+        <!--<script>-->
+            <!--angular.module('phonecatApp', ['ngRoute'])-->
+                <!--.config(['$routeProvider',-->
+                    <!--function($routeProvider){-->
+                        <!--$routeProvider-->
+                                <!--.when('/phones', {-->
+                                    <!--templateUrl: 'partials/phone-list.html',-->
+                                    <!--controller: PhoneListCtrl-->
+                                <!--})-->
+                                <!--.when('/phones/:phoneId', {-->
+                                    <!--templateUrl: 'partials/phone-detail.html',-->
+                                    <!--controller: PhoneDetailCtrl-->
+                                <!--})-->
+                                <!--.otherwise({redirectTo: '/phones'})-->
+                    <!--}]);-->
+
+            <!--var PhoneListCtrl = ['$scope', '$http', function($scope, $http){-->
+                <!--$http.get('phones/phones.json').success(function(data){-->
+                    <!--$scope.phones = data.splice(0, 5);-->
+                    <!--$scope.orderPro = 'age';-->
+                <!--});-->
+            <!--}];-->
+
+            <!--var PhoneDetailCtrl = ['$scope', '$routeParams', function($scope, $routeParams){-->
+                <!--$scope.phoneId = $routeParams.phoneId;-->
+            <!--}];-->
+        <!--</script>-->
+    </body>
+</html>

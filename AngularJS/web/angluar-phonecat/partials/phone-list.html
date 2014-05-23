@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <!--Sidebar content-->
+            Search: <input type="text" ng-model="query">
+            Sort By:
+            <select ng-model="orderPro">
+                <option value="name">Alphabetical</option>
+                <option value="age">Newest</option>
+            </select>
+        </div>
+        <div class="col-md-10">
+            <ul class="phones">
+                <li class="thumbnail" ng-repeat="phone in phones | filter:query | orderBy:orderPro">
+                    <a class="thumb" href="#/phones/{{phone.id}}"><img ng-src="{{phone.imageUrl}}"></a>
+                    <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+                    <p>{{phone.snippet}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

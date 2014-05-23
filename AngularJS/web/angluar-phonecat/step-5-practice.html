@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="../js/bootstrap-3.0.3/dist/css/bootstrap.min.css">
+    </head>
+    <body ng-controller="PhoneListCtrl">
+        Search: <input type="text" ng-model="query">
+        Sort By:
+        <select ng-model="orderPro">
+            <option value="name">Alphabetical</option>
+            <option value="age">Newest</option>
+        </select>
+        <ul>
+            <li ng-repeat="phone in phones | filter:query | orderBy:orderPro">
+                {{phone.name}}
+                <p>{{phone.snippet}}</p>
+            </li>
+        </ul>
+        <hr>
+        <!-- 以json格式输出phones的内容 -->
+        {{phones | json}}
+        <script src="../js/angular-1.3.0-beta.8.min.js"></script>
+        <script>
+            //使用此种方式构建controller，避免js压缩带来的问题(即$scope、$http被改名)
+            var PhoneListCtrl = ['$scope', '$http', function($scope, $http){
+                $http.get('phones/phones.json').success(function(data){
+                    //只显示data中的前4条记录
+                    $scope.phones = data.splice(0, 5);
+                });
+
+                $scope.orderPro = 'age';
+            }];
+        </script>
+    </body>
+</html>

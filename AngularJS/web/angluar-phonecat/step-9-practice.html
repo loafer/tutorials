@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="../js/angular-1.3.0-beta.8.min.js"></script>
+    </head>
+    <body>
+        <h3>angular  内置过滤器演示</h3>
+        <p>
+            uppercase: {{ "lower cap string" | uppercase }}
+        </p>
+        <p>
+            json: {{ {foo: "bar", baz: 23} | json }}
+        </p>
+        <p>
+            date: {{ 1304375948024 | date }}
+        </p>
+        <p>
+            date:"MM/dd/yyyy @ h:mma": {{ 1304375948024 | date:"MM/dd/yyyy @ h:mma" }}
+        </p>
+    </body>
+</html>

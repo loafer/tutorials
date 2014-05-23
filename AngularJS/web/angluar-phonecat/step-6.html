@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="../js/bootstrap-3.0.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/app.css">
+    </head>
+    <body ng-controller="PhoneListCtrl">
+        Search: <input type="text" ng-model="query">
+        Sort By:
+        <select ng-model="orderPro">
+            <option value="name">Alphabetical</option>
+            <option value="age">Newest</option>
+        </select>
+        <ul class="phones">
+            <li class="thumbnail" ng-repeat="phone in phones | filter:query | orderBy:orderPro">
+                <a class="thumb" href="#/phones/{{phone.id}}"><img ng-src="{{phone.imageUrl}}"></a>
+                <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+                <p>{{phone.snippet}}</p>
+            </li>
+        </ul>
+        <script src="../js/angular-1.3.0-beta.8.min.js"></script>
+        <script>
+            var PhoneListCtrl = ['$scope', '$http', function($scope, $http){
+                $http.get('phones/phones.json').success(function(data){
+                    $scope.phones = data.splice(0, 5);
+                    $scope.orderPro = 'age';
+                });
+            }];
+        </script>
+    </body>
+</html>
