@@ -11,6 +11,7 @@
         如果没有映射到"/"，以下两行可以省略。
     -->
     <mvc:resources mapping="/js/**" location="/js/"/>
+    <!-- 开启json -->
     <mvc:annotation-driven/>
 
     <!-- 将指定package下使用@Controller注解的类,注册为Controller -->
