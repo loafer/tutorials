@@ -85,4 +85,14 @@
     <listener>
         <listener-class>org.jasig.cas.client.session.SingleSignOutHttpSessionListener</listener-class>
     </listener>
+    
+    
+    <servlet>
+        <servlet-name>cas proxy</servlet-name>
+        <servlet-class>com.github.loafer.examples.web.controller.CasProxyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cas proxy</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
 </web-app>
