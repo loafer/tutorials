@@ -56,6 +56,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <!--<build>-->
         <!--<finalName>spring4-mvc-xml</finalName>-->
     <!--</build>-->
