@@ -22,7 +22,8 @@
         <init-param>
             <description>配置认证服务器login页地址</description>
             <param-name>casServerLoginUrl</param-name>
-            <param-value>http://localhost:8080/cas/login</param-value>
+            <!--<param-value>http://localhost:8080/cas/login</param-value>-->
+            <param-value>http://localhost:8084/cas-client-custom-login</param-value>
         </init-param>
         <init-param>
             <description>本应用的发布地址（注意端口号，标准端口号(80)可以省略），建议使用域名</description>
