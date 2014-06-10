@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Date Created  14-5-20
@@ -33,7 +34,7 @@ public class UserController {
      */
     @RequestMapping(method = RequestMethod.GET)
     public String listing(@RequestParam(value = "age", required = false) String age, Model model){
-        Map<String, Object> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<String, Object>();
         params.put("age", age);
 
         List userList =  userService.selectList(params);
@@ -80,7 +81,7 @@ public class UserController {
     public Map<String, Boolean> delete(@PathVariable("userid") String userid){
         logger.info("delete {}", userid);
         userService.removeOne(userid);
-        Map<String, Boolean> m = new HashMap<>();
+        Map<String, Boolean> m = new HashMap<String, Boolean>();
         m.put("success", true);
         return m;
     }

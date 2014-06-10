@@ -15,7 +15,7 @@ import java.util.Map;
  * @author zjh
  */
 public class UserService  extends AbstractCrudService<User> implements IUserService{
-    private List<User> userList = new ArrayList<>();
+    private List<User> userList = new ArrayList<User>();
 
     @Override
     public User selectOne(String id) {
@@ -32,7 +32,7 @@ public class UserService  extends AbstractCrudService<User> implements IUserServ
     public List<User> selectList(Map<String, Object> params) {
         String age = (String) params.get("age");
         if(params != null && StringUtils.isNotBlank(age)){
-            List<User> list = new ArrayList<>();
+            List<User> list = new ArrayList<User>();
             for(User user:userList){
                 if(user.getAge() == Integer.parseInt(age)){
                     list.add(user);

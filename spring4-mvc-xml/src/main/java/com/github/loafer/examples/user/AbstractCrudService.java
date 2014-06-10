@@ -20,7 +20,7 @@ public abstract class AbstractCrudService<T> implements ICrudService<T> {
     }
 
     @Override
-    public void saveOrUpdate(T var) {
+    public void saveOrUpdate(T bean) {
 
     }
 
