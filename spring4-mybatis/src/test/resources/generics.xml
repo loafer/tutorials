@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="spring.xml"/>
+
+    <bean id="userMapper"
+          class="org.mybatis.spring.mapper.MapperFactoryBean"
+          p:sqlSessionFactory-ref="sqlSessionFactory"
+          p:mapperInterface="com.github.loafer.mybatis.generics.mapper.UserMapper"/>
+
+    <bean id="userService" class="com.github.loafer.mybatis.generics.UserService"/>
+</beans>

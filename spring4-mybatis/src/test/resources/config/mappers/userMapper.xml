@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.loafer.mybatis.simple.mapper.UserMapper">
+    <resultMap id="userResult" type="com.github.loafer.mybatis.simple.model.User">
+        <result column="user_id" property="id"/>
+        <result column="user_loginname" property="loginName"/>
+        <result column="user_name" property="realName"/>
+    </resultMap>
+
+    <select id="selectOne" parameterType="String" resultMap="userResult">
+        select user_id, user_loginname, user_name from ent_user where user_id = #{id}
+    </select>
+
+    <select id="selectList" parameterType="map" resultMap="userResult">
+        select user_id, user_loginname, user_name
+        from ent_user
+        <where>
+            <if test="loginname != null">
+                and user_loginname like #{loginname} || '%'
+            </if>
+            <if test="orgid != null">
+                and orgna_id = #{orgid}
+            </if>
+        </where>
+    </select>
+</mapper>
