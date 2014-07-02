@@ -19,7 +19,7 @@ import java.util.List;
  *
  * 如何使用Mockito配置各种行为的列子
  *
- * @author zjh
+ * @author zhaojh 
  */
 public class MockitoConfigExamplesTest {
 
@@ -87,7 +87,7 @@ public class MockitoConfigExamplesTest {
     @Test
     @Ignore
     public void configBehaviorOfSpy(){
-        List<String> list = new ArrayList<>();
+        List<String> list = new ArrayList<String>();
         List<String> spy = spy(list);
 
         //可选步骤，此处可以sub一些方法
