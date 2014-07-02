@@ -24,7 +24,7 @@ import java.util.List;
  *  2、使用符合规则1规定的命名规则文件名，将文件名中分割符'-'之前的部分作为被注册的servlet名称。
  *  3、被注册的servlet默认使用'/servlet-name/*'形式来设置servlet-mapping的'url-pattern'值。
  *
- * @author zjh
+ * @author zhaojh
  */
 public class MyWebApplicationInitializer implements WebApplicationInitializer{
     private static final String SERVLET_CONFIG_LOCATION_PATH = "classpath*:config/";
@@ -61,7 +61,7 @@ public class MyWebApplicationInitializer implements WebApplicationInitializer{
     }
 
     private List<ServletConfig> getServletConfigList(){
-        List<ServletConfig> configList = new ArrayList<>();
+        List<ServletConfig> configList = new ArrayList<ServletConfig>();
         ResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver();
 
         try{
