@@ -19,7 +19,7 @@ import java.util.List;
  *
  * 如何使用Mockito配置各种行为的列子
  *
- * @author zhaojh 
+ * @author zhaojh
  */
 public class MockitoConfigExamplesTest {
 
