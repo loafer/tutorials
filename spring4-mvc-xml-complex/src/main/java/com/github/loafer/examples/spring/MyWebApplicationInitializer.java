@@ -1,4 +1,4 @@
-package com.github.loafer.examples.web;
+package com.github.loafer.examples.spring;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
