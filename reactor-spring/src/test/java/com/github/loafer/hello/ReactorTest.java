@@ -20,7 +20,8 @@ import java.util.concurrent.CountDownLatch;
  * @author zhaojh
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = HelloApplication.class)
+//@ContextConfiguration(classes = HelloApplication.class)
+@ContextConfiguration({"/spring-config.xml"})
 public class ReactorTest {
     private static final Logger logger = LoggerFactory.getLogger(ReactorTest.class);
     @Resource
