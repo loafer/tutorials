@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datagrid>
+    <repository bean="repository" statment="com.github.loafer.mybaits.mappers.UserMapper.selectPaging"/>
+    <headers>
+        <row>
+            <header field="user_name" title="姓名" width="150" rowspan="" colspan=""
+                    align="" halign="" sortable="" order="" resizable="" fixed=""
+                    hidden="" checkbox="" formatter="" styler="" sorter="" editor=""/>
+            <header field="user_age" title="年龄" width="150" rowspan="" colspan=""
+                    align="" halign="" sortable="" order="" resizable="" fixed=""
+                    hidden="" checkbox="" formatter="" styler="" sorter="" editor=""/>
+        </row>
+    </headers>
+    <buttons>
+        <button text="增加" iconcls="icon-add" handler="doAdd"/>
+    </buttons>
+</datagrid>
